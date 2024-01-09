@@ -1,0 +1,201 @@
+{   
+    // Theme
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "moxer-icons",
+
+    // Font
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "scm.inputFontFamily": "Fira Code",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "chat.editor.fontFamily": "default",
+
+    // Font size
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+
+    // UI
+    "editor.minimap.enabled": false,
+    "window.commandCenter": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.horizontal": "auto",
+    "window.titleBarStyle": "custom",
+
+    // APC
+    "apc.activityBar": {
+        "position": "bottom",
+        "hideSettings": true,
+        "size": 35
+    },
+    "apc.font.family": "Fira Code",
+    "apc.statusBar": {
+        "position": "editor-bottom",
+        "height": 35,
+        "fontSize": 12
+    },
+
+    // Custom css
+    "apc.stylesheet": {
+        ".sidebar > .composite": "height: 35px !important;",
+        ".title-label": "display: none !important;",
+        //".title-actions": "display: none !important;",
+        ".tabs-and-actions-container > .editor-actions": "display: none !important;",
+        //".titlebar-center": "display: none !important;",
+        //".titlebar-right": "display: none !important;",
+        //".inline-tabs-placeholder": "display: none !important;",
+        //".split-view-view .visible": "background-color: #1c1b22 !important;",
+    },
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/.sveltekit": true,
+        "**/.cache": true,
+        "**/.gitlab": true,
+        "**/.logs": true,
+        "**/.phive": true,
+        "**/.idea": true,
+        "**/.editorconfig": true,
+        "**/.eslintrc.js": true,
+        "**/.gitignore": true,
+        "**/.prettierrc": true,
+        "**/.prettierignore": true,
+        "**/.gitlab-ci.yml": true,
+        "**/.stylelintrc": true,
+        "**/.env.dist": true,
+        "**/.babelrc": true,
+        "**/.gitattributes": true,
+        "**/.jshintrc": true,
+        "**/.arcconfig": true,
+        "**/composer.lock": true,
+        "**/dep": true,
+        "**/vendor": true,
+        "**/flow": true,
+        "**/flow.bat": true,
+        "**/package-lock.json": true,
+        "**/rsync-filter.cfg": true,
+        "**/webpack.common.js": true,
+        "**/webpack.development.js": true,
+        "**/webpack.production.js": true,
+        "**/phpcomp.xml": true,
+        "**/psalm.xml": true,
+        "**/Packages": true,
+        "**/Web": true,
+        "**/bin": true,
+        "**/Build": true,
+        "**/Data": true,
+        "**/composer": true,
+        "**/domains": true,
+        "**/script": true,
+        "**/tron": true
+    },
+
+    // Misc
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "window.zoomLevel": 0.75,
+    "editor.tabSize": 2,
+    "editor.linkedEditing": true,
+
+    // Debugging
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Listen for Xdebug",
+                "type": "php",
+                "request": "launch",
+                "port": 9000,
+                "pathMappings": {
+                    "/app": "${workspaceFolder}",
+                    "/app/packages": "${workspaceFolder}/packages",
+                    "/app/public": "${workspaceFolder}/public",
+                    "/app/vendor": "${workspaceFolder}/vendor"
+                },
+                "hostname": "localhost",
+                "cwd": "/app",
+            },
+            {
+                "name": "Launch currently open script",
+                "type": "php",
+                "request": "launch",
+                "program": "${file}",
+                "cwd": "${fileDirname}",
+                "port": 0,
+                "runtimeArgs": [
+                    "-dxdebug.start_with_request=yes"
+                ],
+                "env": {
+                    "XDEBUG_MODE": "debug,develop",
+                    "XDEBUG_CONFIG": "client_port=${port}"
+                }
+            },
+            {
+                "name": "Launch Built-in web server",
+                "type": "php",
+                "request": "launch",
+                "runtimeArgs": [
+                    "-dxdebug.mode=debug",
+                    "-dxdebug.start_with_request=yes",
+                    "-S",
+                    "localhost:0"
+                ],
+                "program": "",
+                "cwd": "${workspaceRoot}",
+                "port": 9003,
+                "serverReadyAction": {
+                    "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+                    "uriFormat": "http://localhost:%s",
+                    "action": "openExternally"
+                }
+            }
+        ]
+    },
+
+    // Extensions settings
+
+    "files.associations": {
+        "*.ts": "typescript"
+    },
+    "svelte.enable-ts-plugin": true,
+    "tailwind-fold.autoFold": false,
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    "tailwindCSS.includeLanguages": {
+        "fusion": "html"
+    },
+
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (EEx)",
+        "HTML (Eex)",
+        "plist",
+        "fusion"
+    ],
+    "neosFusionLsp.diagnostics.enabled": false,
+    "neosFusionLsp.inlayHint.depth": "literal",
+    "smarty.highlight": true
+}
