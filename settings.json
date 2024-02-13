@@ -16,7 +16,7 @@
 
     // UI
     "editor.minimap.enabled": false,
-    "window.commandCenter": false,
+    "window.commandCenter": true,
     "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "auto",
     "window.titleBarStyle": "custom",
@@ -39,7 +39,7 @@
         ".sidebar > .composite": "height: 35px !important;",
         ".title-label": "display: none !important;",
         //".title-actions": "display: none !important;",
-        ".tabs-and-actions-container > .editor-actions": "display: none !important;",
+        //".tabs-and-actions-container > .editor-actions": "display: none !important;",
         //".titlebar-center": "display: none !important;",
         //".titlebar-right": "display: none !important;",
         //".inline-tabs-placeholder": "display: none !important;",
@@ -92,13 +92,24 @@
         "**/composer": true,
         "**/domains": true,
         "**/script": true,
-        "**/tron": true
+        "**/tron": true,
+        "**/src/admin": true,
+        "**/src/data": true,
+        "**/src/datamodules": true,
+        "**/src/images": true,
+        "**/src/service": true,
+        "**/src/portal/dist": true,
+        "**/src/portal/imxLibrary": true,
+        "**/var": true,
+        "**/.nuxt": true,
+        "**/.output": true,
+        "**/bun.lockb": true,
     },
 
     // Misc
     "workbench.startupEditor": "none",
     "workbench.settings.editor": "json",
-    "window.zoomLevel": 0.75,
+    "window.zoomLevel": 1,
     "editor.tabSize": 2,
     "editor.linkedEditing": true,
 
@@ -119,6 +130,29 @@
                 },
                 "hostname": "localhost",
                 "cwd": "/app",
+            },
+            {
+                "name": "PHP Unit Test with Xdebug",
+                "type": "php",
+                "request": "launch",
+                "program": "${workspaceFolder}/vendor/bin/phpunit",
+                "args": ["--filter", "${fileBasenameNoExtension}"],
+                "cwd": "/app",
+                "runtimeExecutable": "/usr/bin/php",
+                "runtimeArgs": [
+                    "-dxdebug.start_with_request=yes"
+                ],
+                "env": {
+                    "XDEBUG_MODE": "debug,develop",
+                    "XDEBUG_CONFIG": "client_port=9000"
+                },
+                "port": 9000,
+                "pathMappings": {
+                    "/app": "${workspaceFolder}",
+                    "/app/packages": "${workspaceFolder}/packages",
+                    "/app/public": "${workspaceFolder}/public",
+                    "/app/vendor": "${workspaceFolder}/vendor"
+                },
             },
             {
                 "name": "Launch currently open script",
@@ -163,11 +197,6 @@
         "*.ts": "typescript"
     },
     "svelte.enable-ts-plugin": true,
-    "tailwind-fold.autoFold": false,
-    "security.allowedUNCHosts": [
-        "wsl.localhost"
-    ],
-    "diffEditor.ignoreTrimWhitespace": false,
 
     "tailwindCSS.includeLanguages": {
         "fusion": "html"
@@ -195,7 +224,14 @@
         "plist",
         "fusion"
     ],
-    "neosFusionLsp.diagnostics.enabled": false,
+    "neosFusionLsp.diagnostics.enabled": true,
     "neosFusionLsp.inlayHint.depth": "literal",
-    "smarty.highlight": true
+    "smarty.highlight": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": true,
+        "vue": true
+    },
 }
