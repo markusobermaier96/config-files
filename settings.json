@@ -1,52 +1,88 @@
-{   
+{
     // Theme
     "workbench.colorTheme": "GitHub Dark",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "moxer-icons",
 
-    // Font
-    "editor.fontFamily": "Fira Code",
+    // Typography
+    "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
     "editor.fontLigatures": true,
     "scm.inputFontFamily": "Fira Code",
-    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-    "chat.editor.fontFamily": "default",
-
-    // Font size
-    "editor.fontSize": 12,
-    "terminal.integrated.fontSize": 12,
+    "editor.suggestFontSize": 16,
+    "editor.suggestLineHeight": 30,
+    "terminal.integrated.lineHeight": 1.5,
+    "terminal.integrated.fontSize": 16,
 
     // UI
     "editor.minimap.enabled": false,
     "window.commandCenter": true,
+    "window.menuBarVisibility": "compact",
     "editor.scrollbar.vertical": "auto",
     "editor.scrollbar.horizontal": "auto",
     "window.titleBarStyle": "custom",
+    "workbench.sideBar.location": "right",
+    "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.emptySelectionClipboard": false,
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "inherit",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "window.nativeFullScreen": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "workbench.editor.showTabs": "none",
+    "editor.lineNumbers": "off",
+    "editor.guides.indentation": false,
 
-    // APC
-    "apc.activityBar": {
-        "position": "bottom",
-        "hideSettings": true,
-        "size": 35,
-        
-    },
-    "apc.font.family": "Fira Code",
-    "apc.statusBar": {
-        "position": "editor-bottom",
-        "height": 35,
-        "fontSize": 12
+    // Silence the Noise
+    "breadcrumbs.enabled": false,
+    "scm.diffDecorations": "none",
+    "editor.hover.delay": 1500,
+    "editor.hover.enabled": true,
+    "editor.matchBrackets": "never",
+    "workbench.tips.enabled": false,
+    "editor.colorDecorators": false,
+    "git.decorations.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": "off",
+    "editor.selectionHighlight": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": "off",
+    "problems.decorations.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    "vscode_custom_css.imports": [
+        "file:///C:/Users/obermaier/.vscode/customization/custom-vscode.css",
+        "file:///C:/Users/obermaier/.vscode/customization/custom-vscode-script.js"
+    ],
+
+    "search.useIgnoreFiles": false,
+    "search.exclude": {
+        // Hide everything in /vendor, except the "laravel" and "livewire" folder.
+        "**/vendor/{[^l],?[^ai]}*": true,
+        // Hide everything in /public, except "index.php"
+        "**/public/{[^i],?[^n]}*": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/_ide_helper.php": true,
+        "**/composer.lock": true,
+        "**/package-lock.json": true,
+        "storage": true,
+        ".phpunit.result.cache": true
     },
 
-    // Custom css
-    "apc.stylesheet": {
-        ".sidebar > .composite": "height: 35px !important;",
-        ".title-label": "display: none !important;",
-        //".title-actions": "display: none !important;",
-        //".tabs-and-actions-container > .editor-actions": "display: none !important;",
-        //".titlebar-center": "display: none !important;",
-        //".titlebar-right": "display: none !important;",
-        //".inline-tabs-placeholder": "display: none !important;",
-        //".split-view-view .visible": "background-color: #1c1b22 !important;",
-    },
-
+    // Excluded files
     "files.exclude": {
         "**/.git": false,
         "**/.svn": false,
@@ -106,13 +142,6 @@
         "**/bun.lockb": false,
         "**/.turbo": false
     },
-
-    // Misc
-    "workbench.startupEditor": "none",
-    "workbench.settings.editor": "json",
-    "window.zoomLevel": 1,
-    "editor.tabSize": 2,
-    "editor.linkedEditing": true,
 
     // Debugging
     "launch": {
@@ -225,8 +254,6 @@
         "plist",
         "fusion"
     ],
-    "neosFusionLsp.diagnostics.enabled": true,
-    "neosFusionLsp.inlayHint.depth": "literal",
     "smarty.highlight": true,
     "github.copilot.enable": {
         "*": true,
@@ -238,5 +265,4 @@
     "remote.autoForwardPortsSource": "hybrid",
     "editor.stickyScroll.enabled": true,
     "typescript.updateImportsOnFileMove.enabled": "never",
-    
 }
